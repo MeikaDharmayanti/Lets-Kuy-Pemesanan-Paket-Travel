@@ -26,6 +26,22 @@ int main (void){
 printf("======================================================================\n");
 printf("                                  WELCOME\n");
 printf("======================================================================\n");
-printf("                          Pemesanan Paket Travel\n");
-printf("======================================================================\n");
-printf("Apakah Anda Admin (Y/T)?: \n");
+printf("                              LOGIN OPERATOR\n");
+printf("======================================================================\n\n");
+	
+login:
+printf("Masukkan Username:");
+scanf("%s", &username );
+printf("Masukkan Password:");
+scanf("%s", &password);
+
+if (strcmp (username,"sinta")==0 && strcmp (password, "letskuy123")==0 || strcmp (username,"meika")==0 && strcmp (password, "letskuy456")==0 ){
+	printf("LOGIN BERHASIL!\n");
+	printf("------------------SELAMAT DATANG OPERATOR-------------------\n\n\n");
+	getch(1);
+	system ("cls");
+	}
+else{
+	printf("USERNAME ATAU PASSWORD SALAH\n\n");
+	goto login;
+	}
