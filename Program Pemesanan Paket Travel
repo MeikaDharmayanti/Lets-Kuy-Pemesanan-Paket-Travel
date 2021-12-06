@@ -2,7 +2,7 @@
 #include <string.h>
 #include <time.h>
 
-int main ();{
+int main (){
 	struct tm *Sys_T;
 	time_t Tval;
 	Tval = time(NULL);
@@ -13,12 +13,45 @@ int main ();{
 	int hari_bayar = Sys_T->tm_wday ;      
 	char hari [6];
 	char bulan [9];
-	
+	char nama [50];
+	int jumlah_orang;
+	int tanggal_pemesanan;
+	int bulan_pemesanan;
+	int tahun_pemesanan;
+	int pilihan;
+	int pesan;
+	char username [6];
+	char password [9];
+	int ulang;
 
-printf("======================================================================\n");
-printf("                                  WELCOME\n");
-printf("======================================================================\n");
-printf("                          Pemesanan Paket Travel\n");
-printf("======================================================================\n");
-printf("Apakah Anda Admin (Y/T)?: \n");
+	printf("======================================================================\n");
+	printf("                           LOGIN OPERATOR\n");
+	printf("======================================================================\n\n");
+	
+	login:
+	printf("Masukkan Username : ");
+	scanf("%s", &username );
+	fflush(stdin); 
+	printf("Masukkan Password : ");
+	scanf("%s", &password); 
+	fflush(stdin);
+	
+	if (strcmp (username,"sinta")==0 && strcmp (password, "letskuy1")==0 || strcmp (username,"meika")==0 && strcmp (password, "letskuy2")==0 ){
+		// fungsi untuk membandingkan username dan password yang dimasukkan dengan yang ditentukan
+		printf("LOGIN BERHASIL!\n\n");
+		printf("------------------SELAMAT DATANG OPERATOR-------------------\n\n");
+		getch();
+	}
+	else{
+		ulang=ulang+1;
+		//fungsi untuk menentukan berapa kali perulangan password akan diijinkan
+		if(ulang<3){  
+			printf("USERNAME ATAU PASSWORD SALAH\n\n");
+			goto login;
+		}	
+		else{
+			printf("Akses Ditolak!");
+			getch();
+		}
+	}
 }
