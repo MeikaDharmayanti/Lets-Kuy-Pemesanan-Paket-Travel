@@ -2,7 +2,7 @@
 #include <string.h>
 #include <time.h>
 
-int main (void){
+int main ();{
 	struct tm *Sys_T;
 	time_t Tval;
 	Tval = time(NULL);
