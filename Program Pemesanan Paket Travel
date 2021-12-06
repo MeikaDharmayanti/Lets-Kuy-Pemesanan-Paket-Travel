@@ -2,14 +2,6 @@
 #include <string.h>
 #include <time.h>
 
-void menu_utana (void);
-void pilihan1 (void);
-void pilihan2 (void);
-void pilihan3 (void);
-void pilihan4 (void);
-void pilihan5 (void);
-void pesan (void);
-
 int main (void){
 	struct tm *Sys_T;
 	time_t Tval;
@@ -29,3 +21,4 @@ printf("======================================================================\n
 printf("                          Pemesanan Paket Travel\n");
 printf("======================================================================\n");
 printf("Apakah Anda Admin (Y/T)?: \n");
+}
