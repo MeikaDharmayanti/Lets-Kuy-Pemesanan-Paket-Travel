@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+
+void menu_utana (void);
+void pilihan1 (void);
+void pilihan2 (void);
+void pilihan3 (void);
+void pilihan4 (void);
+void pilihan5 (void);
+void pesan (void);
+
+int main (void){
+	struct tm *Sys_T;
+	time_t Tval;
+	Tval = time(NULL);
+	Sys_T = localtime(&Tval);
+	int tanggal_bayar = Sys_T->tm_mday;    
+	int bulan_bayar = Sys_T->tm_mon+1;     
+	int tahun_bayar = 1900+Sys_T->tm_year;
+	int hari_bayar = Sys_T->tm_wday ;      
+	char hari [6];
+	char bulan [9];
+	
+
+printf("======================================================================\n");
+printf("                                  WELCOME\n");
+printf("======================================================================\n");
+printf("                          Pemesanan Paket Travel\n");
+printf("======================================================================\n");
+printf("Apakah Anda Admin (Y/T)?: \n");
