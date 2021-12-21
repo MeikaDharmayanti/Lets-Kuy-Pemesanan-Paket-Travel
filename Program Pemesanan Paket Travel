@@ -316,7 +316,7 @@ int main (){
 			goto pilihan;
 	}
 	pesan:
-	printf("----------------------------------------------------------------\n");
+	printf("\n\n----------------------------------------------------------------\n");
 	printf("Pilih 1 Untuk Pesan\n");
 	printf("Pilih 2 Untuk Tambah Fasilitas\n");
 	printf("Pilih 3 Untuk Kembali\n\n");
