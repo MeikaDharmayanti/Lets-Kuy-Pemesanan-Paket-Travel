@@ -221,7 +221,7 @@ int main (){
 		printf("====================================================================\n");
 		printf("Lama Travel: %s Hari\n\n", paket.lama);
 		printf("Objek Wisata:\n");
-		printf("a. Keliling Beach\n");
+		printf("a. Kelingking Beach\n");
 		printf("b. Broken Beach\n");
 		printf("c. Angel's Billabong\n");
 		printf("d. Cristal Bay\n\n");
