@@ -303,12 +303,78 @@ int main (){
 	printf("----------------------------------------------------------------\n");
 	printf("Pilih 1 Untuk Pesan\n");
 	printf("Pilih 2 Untuk Tambah Fasilitas\n");
-	printf("Pikih 3 Untuk Kembali\n\n");
-	scanf("%d", &pesanan,pesan);
+	printf("Pilih 3 Untuk Kembali\n\n");
+	scanf("%d", &pesanan.pesan);
 	fflush(stdin);
 	
+	switch (pesanan.pesan){
+		case 1 :
+			pemesanan:
+			system("cls");
+			printf("----------------------------------------------------------------\n");
+			printf("Nama Paket            : %s \n", paket);
+			printf("Lama Travel           : %s Hari\n", paket.lama);
+			printf("Harga Per Orang       : %d\n", paket.harga);
+			printf("Fasilitas Tambahan    : \n");
+			for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
+				printf("                          %d. %s\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
+			}
+			printf("Harga Semua Fasilitas : %d\n", harga_semua_fasilitas);	
+			printf("Nama Pemesan          : ");
+			scanf("%s", &pesanan.nama);
+			fflush(stdin);
 			
-		
+			printf("Jumlah Orang          : ");
+			scanf("%d", &pesanan.jumlah_orang);
+			fflush(stdin);
+			
+			paket.total_travel=pesanan.jumlah_orang*paket.harga;
+			printf("Total Harga Travel    : %d\n", paket.total_travel);
+			paket.total=paket.total_travel+harga_semua_fasilitas;
+			
+			bulan:
+			printf("Bulan Kedatangan      : ");
+			scanf("%d", &pesanan.bulan_pemesanan);
+			fflush(stdin);
+			
+			if (pesanan.bulan_pemesanan>12){
+				printf("Masukkan Bulan Yang Sesuai\n");
+				goto bulan;
+			}
+			tanggal:
+			printf("Tanggal Kedatangan    : ");
+			scanf("%d", &pesanan.tanggal_pemesanan);
+			fflush(stdin);
+			
+			if (pesanan.bulan_pemesanan==1 || pesanan.bulan_pemesanan==3 || pesanan.bulan_pemesanan==5 || pesanan.bulan_pemesanan==7 || 
+			pesanan.bulan_pemesanan==8 ||pesanan.bulan_pemesanan==10 || pesanan.bulan_pemesanan==12){
+				if (pesanan.tanggal_pemesanan >31){
+				printf("Masukkan Tanggal Yang Sesuai\n");
+				goto tanggal;
+				}
+			}
+			else if (pesanan.bulan_pemesanan==4 || pesanan.bulan_pemesanan==6 || pesanan.bulan_pemesanan==9 || pesanan.bulan_pemesanan==11){
+				if (pesanan.tanggal_pemesanan>30){
+				printf("Masukkan Tanggal Yang Sesuai\n");
+				goto tanggal;
+				}
+			}
+			else if (pesanan.bulan_pemesanan==2){
+				if (pesanan.tanggal_pemesanan>29){
+				printf("Masukkan Tanggal Yang Sesuai\n");
+				goto tanggal;
+				}
+			}
+			printf("Tahun Kedatangan      : ");
+			scanf("%d", &pesanan.tahun_pemesanan);
+			fflush(stdin);
+			
+			if (pesanan.tahun_pemesanan<tahun_sekarang||
+			(pesanan.bulan_pemesanan<bulan_sekarang && pesanan.tahun_pemesanan<= tahun_sekarang)||
+			(pesanan.tanggal_pemesanan<tanggal_sekarang && pesanan.bulan_pemesanan<=bulan_sekarang && pesanan.tahun_pemesanan<=tahun_sekarang)){
+				printf("Mohon Inputkan Tanggal Kedatangan Yang Sesuai\n");
+				getch();
+				goto bulan;
+			}
 	}
-	
 }
