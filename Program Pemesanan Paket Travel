@@ -27,11 +27,18 @@ int main (){
 	};
 	struct travel paket; 
 	
-	int tanggal_pemesanan;
-	int bulan_pemesanan;
-	int tahun_pemesanan;
-	int pilihan;
-	int pesan;
+	struct pemesan {
+		char nama [50];
+		int jumlah_orang;
+		int tanggal_pemesanan;
+		int bulan_pemesanan;
+		int tahun_pemesanan;
+		int pilihan;
+		int pesan;
+		int ulang; 
+	};
+	struct pemesan pesanan;
+	
 	struct login{
 		int menu;
 		int ulang;
@@ -209,7 +216,24 @@ int main (){
 		printf("c. Guide Lokal Berpengalaman");
 		break;
 		
-		
+		case 2 : 
+			strcpy (paket.nama, "Paket Timur Nusa Penida");
+			strcpy (paket.lama, "Satu");
+			paket.harga=350000;
+			printf("====================================================================\n");
+			printf ("                     Paket Timur Nusa Penida\n");
+			printf("====================================================================\n");
+			printf("Lama Travel: %s Hari\n\n", paket.lama);
+			printf("Objek Wisata:\n");
+			printf("a. Diamond Beach\n");
+			printf("b. Atuh Beach\n");
+			printf("c. Pulau Seribu/Raja Lima\n");
+			printf("d. Bukit Telletubies\n\n");
+			printf("Fasilitas:\n");
+			printf("a. Private Tour Dengan Mobil\n");
+			printf("b. Penjemputan Ke Lokasi\n");
+			printf("c. Guide Lokal Berpengalaman\n\n");
+			break;
 	}
 	
 }
