@@ -455,8 +455,8 @@ int main (){
 					printf("Jumlah Orang         : %d\n", pesanan.jumlah_orang);
 					printf("Tanggal Kedatangan   : %d %s %d \n", pesanan.tanggal_pemesanan, paket.bulan_pesan, pesanan.tahun_pemesanan);
 					printf("Total Harga Travel   : %d\n", paket.total_travel);
-					printf("Total Harga Fasilitas: %d\n, harga_semua_fasilitas ");
-					printf("Total Harga          : %d\n\n, paket.total");
+					printf("Total Harga Fasilitas: %d\n", harga_semua_fasilitas);
+					printf("Total Harga          : %d\n\n", paket.total);
 					
 					bayar:
 					printf("Bayar		     :");
