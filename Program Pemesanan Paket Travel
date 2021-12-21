@@ -258,6 +258,26 @@ int main (){
 		printf("c. Guide Lokal Berpengalaman\n\n");
 		break:
 		
+		case 4 : 
+			strcpy (paket.nama, "Paket Snorkling");
+			strcpy (paket.lama, "Setengah");
+			paket.harga=400000;
+			printf("====================================================================\n");
+			printf ("                     Paket Snorkling\n");
+			printf("====================================================================\n");
+			printf("Lama Travel: %s Hari\n\n", paket.lama);
+			printf("Spot Snorkling:\n");
+			printf("a. Wall Point\n");
+			printf("b. Jetty Point\n");
+			printf("c. Manta Point\n");
+			printf("d. Gamat Bay\n\n");
+			printf("Fasilitas:\n");
+			printf("a. Private Tour Dengan Mobil\n");
+			printf("b. Penjemputan Ke Lokasi\n");
+			printf("c. Guide Lokal Berpengalaman\n");
+			printf("d. Peralatan Snorkling\n\n");
+			break;
+		
 	}
 	
 }
