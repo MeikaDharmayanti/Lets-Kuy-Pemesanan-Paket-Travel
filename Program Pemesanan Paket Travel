@@ -20,9 +20,13 @@ int main (){
 	int tahun_pemesanan;
 	int pilihan;
 	int pesan;
-	char username [6];
-	char password [9];
-	int ulang;
+	struct login{
+		int menu;
+		int ulang;
+		char username [6];
+		char password [9];
+	};
+	struct login registrasi;
 	
 	switch (hari_sekarang) {
 	case 0: 
@@ -88,33 +92,67 @@ int main (){
 	}
 
 	printf("======================================================================\n");
-	printf("                           LOGIN OPERATOR\n");
+	printf("                     REGISTRASI/LOGIN PENGGUNA\n");
 	printf("======================================================================\n\n");
 	
-	login:
-	printf("Masukkan Username : ");
-	scanf("%s", &username );
-	fflush(stdin); 
-	printf("Masukkan Password : ");
-	scanf("%s", &password); 
-	fflush(stdin);
+	menu:
+	printf("+----------------------------+\n");								//menampilkan menu yaitu registrasi dan login
+	printf ("| No |          Menu         |\n"); 
+	printf("+----------------------------+\n");
+	printf ("| 1  |       Registrasi      |\n");
+	printf ("| 2  |         Login         |\n");
+	printf("+----------------------------+\n");
 	
-	if (strcmp (username,"sinta")==0 && strcmp (password, "letskuy1")==0 || strcmp (username,"meika")==0 && strcmp (password, "letskuy2")==0 ){
-		// fungsi untuk membandingkan username dan password yang dimasukkan dengan yang ditentukan
-		printf("LOGIN BERHASIL!\n\n");
-		printf("------------------SELAMAT DATANG OPERATOR-------------------\n\n");
-		getch();
-	}
-	else{
-		ulang=ulang+1;
-		//fungsi untuk menentukan berapa kali perulangan password akan diijinkan
-		if(ulang<3){  
-			printf("USERNAME ATAU PASSWORD SALAH\n\n");
-			goto login;
-		}	
-		else{
-			printf("Akses Ditolak!");
-			getch();
-		}
+	printf (" Piih Menu Yang Diinginkan (1-2): "); 
+	scanf("%d", &registrasi.menu);
+	switch(registrasi.menu){
+		case 1 :
+			printf("======================================================================\n");
+			printf("                           REGISTRASI PENGGUNA\n");
+			printf("======================================================================\n\n");
+			printf("Masukkan Username: ");
+			scanf("%s", &registrasi.username );
+			fflush(stdin);
+			printf("Masukkkan Password: ");
+			scanf("%s", &registrasi.password); 
+			fflush(stdin);
+			printf("\nAkun Berhasil Disimpan\n");
+			printf("\n------------------SELAMAT DATANG------------------\n\n");
+			break;
+		case 2 :
+			printf("======================================================================\n");
+			printf("                           LOGIN PENGGUNA\n");
+			printf("======================================================================\n\n");
+			login:
+			printf("Masukkan Username : ");
+			scanf("%s", &registrasi.username );
+			fflush(stdin); 
+			printf("Masukkan Password : ");
+			scanf("%s", &registrasi.password); 
+			fflush(stdin);	
+			
+			if (strcmp (registrasi.username,"SINTA")==0 && strcmp (registrasi.password, "letskuy1")==0 || 
+				strcmp (registrasi.username,"MEIKA")==0 && strcmp (registrasi.password, "letskuy2")==0 ){
+				// fungsi untuk membandingkan username dan password yang dimasukkan dengan yang ditentukan
+				printf("LOGIN BERHASIL!\n\n");
+				printf("\n------------------SELAMAT DATANG------------------\n\n");
+				getch();
+			}
+			else{
+				registrasi.ulang=registrasi.ulang+1;
+				//fungsi untuk menentukan berapa kali perulangan password akan diijinkan
+				if(registrasi.ulang<3){
+					printf("USERNAME ATAU PASSWORD SALAH\n\n");
+					goto login;
+				}	
+				else{
+					printf("Akses Ditolak!");
+					getch();
+				}
+			}
+			break;
+		default:
+			printf("Mohon Hanya Masukkan Antara Angka 1 atau 2!\n");
+			goto menu;
 	}
 }
