@@ -256,10 +256,10 @@ int main (){
 		paket.harga=600000;
 		printf("====================================================================\n");
 		printf	("                     Paket Barat dan Timur Nusa Penida\n");
-		printf("====================================================================\n")
+		printf("====================================================================\n");
 		printf("Lama Travel: %s Hari\n\n", paket.lama);
 		printf("Objek Wisata:\n");
-		printf("a. Keliling Beach\n)";
+		printf("a. Keliling Beach\n");
 		printf("b. Broken Beach\n");
 		printf("c. Angel's Billabong\n");
 		printf("d. Cristal Bay\n");
@@ -271,7 +271,7 @@ int main (){
 		printf("a. Private Tour Dengan Mobil\n");
 		printf("b. Penjemputan Ke Lokasi\n");
 		printf("c. Guide Lokal Berpengalaman\n\n");
-		break:
+		break;
 		
 		case 4 : 
 			strcpy (paket.nama, "Paket Snorkling");
@@ -312,7 +312,7 @@ int main (){
 			break;
 		default :
 			printf("Mohon Hanya Masukkan Antara Angka 1-5!\n");
-			goto pilihan:
+			goto pilihan;
 	}
 	pesan:
 	printf("----------------------------------------------------------------\n");
@@ -391,7 +391,7 @@ int main (){
 				getch();
 				goto bulan;
 			}
-			switch (pesanan.bulan_pemesan) {
+			switch (pesanan.bulan_pemesanan) {
 				case 1: 
 					strcpy (paket.bulan_pesan, "Januari");
 					break;
@@ -408,7 +408,7 @@ int main (){
 					strcpy (paket.bulan_pesan, "Mei");
 					break;
 				case 6: 
-					strcpy (paket.bulan_pesam, "Juni");
+					strcpy (paket.bulan_pesan, "Juni");
 					break;
 				case 7: 
 					strcpy (paket.bulan_pesan, "Juli");
@@ -466,7 +466,7 @@ int main (){
 					goto bayar;
 					}
 					else {
-						pakwt.kembalian=paket.bayara-paket.total;
+						paket.kembalian=paket.bayar-paket.total;
 						printf("Kembalian 	:%d", paket.kembalian);
 					}
 					break;
