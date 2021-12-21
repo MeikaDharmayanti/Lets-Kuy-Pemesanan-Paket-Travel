@@ -277,6 +277,25 @@ int main (){
 			printf("c. Guide Lokal Berpengalaman\n");
 			printf("d. Peralatan Snorkling\n\n");
 			break;
+			
+		case 5 :
+			strcpy (paket.nama, "Paket Tirta Yatra");
+			strcpy (paket.lama, "Satu");
+			paket.harga=450000;
+			printf("====================================================================\n");
+			printf ("                     Paket Tirta Yatra\n");
+			printf("====================================================================\n");
+			printf("Lama Travel: %s Hari\n\n", paket.lama);
+			printf("Pura Tujuan:\n");
+			printf("a. Pura Mobil\n");
+			printf("b. Pura Ped\n");
+			printf("c. Pura Puncak Mundi\n");
+			printf("Fasilitas :\n");
+			printf("a. Private Tour Dengan Mobil\n");
+			printf("b. Penjemputan Ke Lokasi\n");
+			printf("c. Guide Lokal Berpengalaman\n\n");
+			break:
+			
 		
 	}
 	
