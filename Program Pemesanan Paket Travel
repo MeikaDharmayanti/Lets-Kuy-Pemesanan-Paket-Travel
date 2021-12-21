@@ -227,7 +227,7 @@ int main (){
 		printf("d. Cristal Bay\n\n");
 		printf("Fasilitas:\n");
 		printf("a. Private Tour Dengan Mobil\n");
-		printf("b. Panjemput Ke Lokasi\n");
+		printf("b. Panjemputan Ke Lokasi\n");
 		printf("c. Guide Lokal Berpengalaman");
 		break;
 		
