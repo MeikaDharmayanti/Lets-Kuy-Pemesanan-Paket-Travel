@@ -61,7 +61,7 @@ int main (){
 		strcpy (hari, "Rabu");
 		break;
 	case 4: 
-		strcyp (hari, "Kamis");
+		strcpy (hari, "Kamis");
 		break;
 	case 5: 
 		strcpy (hari, "Jumat");
@@ -191,8 +191,8 @@ int main (){
 	printf("-------------------------------------------------------------------------\n");	
 	
 	pilihan:
-	printf ("Pilihan Pkaet Yang Diinginkan (1-5)??\n");
-	scanf ("%d", &pemesanan.pilihin);
+	printf ("Pilihan Paket Yang Diinginkan (1-5)??\n");
+	scanf ("%d", &pesanan.pilihan);
 	fflush(stdin);
 	system("cls");
 	
@@ -234,6 +234,30 @@ int main (){
 			printf("b. Penjemputan Ke Lokasi\n");
 			printf("c. Guide Lokal Berpengalaman\n\n");
 			break;
+			
+		case 3 : 
+		strcpy (paket.nama, "Paket Barat dan Timur Nusa Penida ");
+		strcpy (paket.lama, "Dua");
+		paket.harga=600000;
+		printf("====================================================================\n");
+		printf	("                     Paket Barat dan Timur Nusa Penida\n");
+		printf("====================================================================\n")
+		printf("Lama Travel: %s Hari\n\n", paket.lama);
+		printf("Objek Wisata:\n");
+		printf("a. Keliling Beach\n)";
+		printf("b. Broken Beach\n");
+		printf("c. Angel's Billabong\n");
+		printf("d. Cristal Bay\n");
+		printf("e. Diamond Beach\n");
+		printf("f. Atuh Beach\n");
+		printf("g. Pulau Seribu/Raja Lima\n");
+		printf("h. Bukit Telletubies\n\n");
+		printf("Fasilitas:\n");
+		printf("a. Private Tour Dengan Mobil\n");
+		printf("b. Penjemputan Ke Lokasi\n);
+		printf("c. Guide Lokal Berpengalaman\n\n");
+		break:
+		
 	}
 	
 }
