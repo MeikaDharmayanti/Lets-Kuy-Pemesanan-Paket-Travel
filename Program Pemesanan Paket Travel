@@ -47,6 +47,20 @@ int main (){
 	};
 	struct login registrasi;
 	
+	struct fasilitas{
+		int fasilitas;
+		char nama_fasilitas [5] [100];
+		int harga_fasilitas [5];
+		int banyak_fasilitas[5];
+		int total_harga_fasilitas;
+		int i,j;
+		char tambah_fasilitas;
+	};
+	struct fasilitas fasilitas;
+	int pilih_fasilitas=0;
+	int harga_semua_fasilitas=0;
+	
+	
 	switch (hari_sekarang) {
 	case 0: 
 		strcpy (hari, "Minggu");
@@ -126,7 +140,7 @@ int main (){
 	scanf("%d", &registrasi.menu);
 	switch(registrasi.menu){
 		case 1 :
-			printf("======================================================================\n");
+			printf("\n\n======================================================================\n");
 			printf("                           REGISTRASI PENGGUNA\n");
 			printf("======================================================================\n\n");
 			printf("Masukkan Username: ");
@@ -137,9 +151,10 @@ int main (){
 			fflush(stdin);
 			printf("\nAkun Berhasil Disimpan\n");
 			printf("\n------------------SELAMAT DATANG------------------\n\n");
+			getch();
 			break;
 		case 2 :
-			printf("======================================================================\n");
+			printf("\n\n======================================================================\n");
 			printf("                           LOGIN PENGGUNA\n");
 			printf("======================================================================\n\n");
 			login:
@@ -417,7 +432,7 @@ int main (){
 			kirim :
 			printf("Tekan 1 untuk kirim data\n");
 			printf("Tekan 2 untuk ulangi masukkan data\n");
-			printf("Tekan 3 untuk kembali ke menu uatama\n");
+			printf("Tekan 3 untuk kembali ke menu utama\n");
 			scanf("%d", &paket.kirim);
 			fflush(stdin);
 			
@@ -475,7 +490,55 @@ int main (){
 				printf("|  4   |         Paket 100 Canang + 5 Pejati         | 250.000/paket |\n");
 				printf("---------------------------------------------------------------------\n\n");
 				
-			
+				fasilitas:
+				printf("Pilih Fasilitas Yang Diinginkan (1-4) : ");
+				scanf("%d", &fasilitas);
+				fflush(stdin);
+				if (0<fasilitas.fasilitas<5){
+					switch (fasilitas.fasilitas) {
+						case 1 :
+							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Tiket Boat Pelabuhan Sanur-Nusa Penida");
+							fasilitas.harga_fasilitas[pilih_fasilitas]=75000;
+							break;
+						case 2 :
+							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Tiket Boat Pelabuhan Tri Buana-Nusa Penida");
+							fasilitas.harga_fasilitas[pilih_fasilitas]=50000;
+							break;
+						case 3 :
+							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Kamar Penginapan  ");
+							fasilitas.harga_fasilitas[pilih_fasilitas]=200000;
+							break;
+						case 4 :
+							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Paket 100 Canang + 5 Pejati ");
+							fasilitas.harga_fasilitas[pilih_fasilitas]=250000;
+							break;
+					}
+					printf("Banyak : ");
+					scanf("%d", &fasilitas.banyak_fasilitas[pilih_fasilitas]);
+					fflush(stdin);		
+						
+					fasilitas.total_harga_fasilitas= fasilitas.harga_fasilitas[pilih_fasilitas] * fasilitas.banyak_fasilitas[pilih_fasilitas];
+					printf("Total Harga : %d\n\n", fasilitas.total_harga_fasilitas);
+					harga_semua_fasilitas= harga_semua_fasilitas + fasilitas.total_harga_fasilitas;							
+					printf("Harga Semua Fasilitas Adalah : %d\n", harga_semua_fasilitas);	
+					pilih_fasilitas+=1;
+						
+					tambah_fasilitas:
+					printf("Fasilitas Berhasil Ditambahkan\n");
+					printf("Ingin Menambah Fasilitas? (Y/T)\n");
+					scanf("%c", &fasilitas.tambah_fasilitas);
+					fflush(stdin);
+					
+					if (fasilitas.tambah_fasilitas=='Y'){
+						goto fasilitas;
+						}
+					else if(fasilitas.tambah_fasilitas=='T'){
+						goto pemesanan;
+						}
+					else{
+						printf("Mohon Hanya Masukkan Y atau T ! \n");
+						goto tambah_fasilitas;
+						}
 				
 			}
 	}
