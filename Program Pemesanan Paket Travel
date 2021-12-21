@@ -23,7 +23,7 @@ int main (){
 		int total;
 		int kembalian;
 		int bayar;
-		int bulan_pesan [9];
+		char bulan_pesan [9];
 	};
 	struct travel paket; 
 	
