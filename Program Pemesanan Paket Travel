@@ -305,6 +305,7 @@ int main (){
 			printf("a. Pura Mobil\n");
 			printf("b. Pura Ped\n");
 			printf("c. Pura Puncak Mundi\n");
+			printf("d. Pura Giri Putri\n\n");
 			printf("Fasilitas :\n");
 			printf("a. Private Tour Dengan Mobil\n");
 			printf("b. Penjemputan Ke Lokasi\n");
@@ -442,13 +443,13 @@ int main (){
 					system("cls");
 					printf("------------------------NOTA PEMESANAN-----------------------\n");
 					printf("Tanggal             : %s, %d %s %d\n", hari, tanggal_sekarang, bulan, tahun_sekarang);
-					printf("Waktu               : %s.%d\n", Sys_T -> tm_hour, Sys_T -> tm_min);
+					printf("Waktu               : %d.%d\n", Sys_T -> tm_hour, Sys_T -> tm_min);
 					printf("Nama Paket          : %s\n", paket);
 					printf("Lama Travel         : %s Hari\n", paket.lama);
 					printf("Harga Per Orang	    : %d\n", paket.harga);
 					printf("Fasilitas Tambahan  :\n");
 					for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
-						printf(" %d.%d\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
+						printf(" %d.%s\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
 					}
 					printf("Nama Pemesan         : %s\n", pesanan.nama);
 					printf("Jumlah Orang         : %d\n", pesanan.jumlah_orang);
@@ -459,7 +460,7 @@ int main (){
 					
 					bayar:
 					printf("Bayar		     :");
-					scanf("%d", paket.bayar);
+					scanf("%d", &paket.bayar);
 					fflush(stdin);
 					if(paket.bayar<paket.total){
 						printf("Jumlah Pembayaran Tidak Sesuai!!\n");
