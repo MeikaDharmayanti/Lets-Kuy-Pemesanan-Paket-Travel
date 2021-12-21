@@ -476,7 +476,7 @@ int main (){
 				case 3:
 					goto menu_utama;
 				default:
-					printf("Mohon Hanya Masukkan Antara Angka 1 atau 2!\n");
+					printf("Mohon Hanya Masukkan Antara Angka 1-3!\n");
 					goto kirim;
 				}
 				break;
