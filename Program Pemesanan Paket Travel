@@ -294,7 +294,19 @@ int main (){
 			printf("a. Private Tour Dengan Mobil\n");
 			printf("b. Penjemputan Ke Lokasi\n");
 			printf("c. Guide Lokal Berpengalaman\n\n");
-			break:
+			break;
+		default :
+			printf(""Mohon Hanya Masukkan Antara Angka 1-5!\n);
+			goto pilihan:
+	}
+	pesan:
+	printf("----------------------------------------------------------------\n");
+	printf("Pilih 1 Untuk Pesan\n");
+	printf("Pilih 2 Untuk Tambah Fasilitas\n");
+	printf("Pikih 3 Untuk Kembali\n\n");
+	scanf("%d", &pesanan,pesan);
+	fflush(stdin);
+	
 			
 		
 	}
