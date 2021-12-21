@@ -7,10 +7,10 @@ int main (){
 	time_t Tval;
 	Tval = time(NULL);
 	Sys_T = localtime(&Tval);
-	int tanggal_bayar = Sys_T->tm_mday;    
-	int bulan_bayar = Sys_T->tm_mon+1;     
-	int tahun_bayar = 1900+Sys_T->tm_year;
-	int hari_bayar = Sys_T->tm_wday ;      
+	int tanggal_sekarang = Sys_T->tm_mday;    
+	int bulan_sekarang = Sys_T->tm_mon+1;     
+	int tahun_sekarang = 1900+Sys_T->tm_year;
+	int hari_sekarang = Sys_T->tm_wday ;      
 	char hari [6];
 	char bulan [9];
 	char nama [50];
@@ -23,6 +23,69 @@ int main (){
 	char username [6];
 	char password [9];
 	int ulang;
+	
+	switch (hari_sekarang) {
+	case 0: 
+		strcyp (hari, "Minggu");
+		break;
+	case 1:
+		strcyp (hari, "Senin"); 
+		break;
+	case 2:
+		strcyp (hari, "Selasa");
+		break;
+	case 3:
+		strcyp (hari, "Rabu");
+		break;
+	case 4: 
+		strcyp (hari, "Kamis");
+		break;
+	case 5: 
+		strcyp (hari, "Jumat");
+		break;
+	case 6:
+		strcyp (hari, "Sabtu");
+		break;
+	}
+	
+	switch (bulan_sekaarang) {
+	case 1: 
+		strcyp (bulan, "Januari");
+		break; 
+	case 2: 
+		strcyp (bulan, "Februari"); 
+		break; 
+	case 3:
+		strcyp (bulan, "Maret");
+		break;
+	case 4: 
+		strcyp (bulan, "April"); 
+		break; 
+	case 5: 
+		strcyp (bulan, "Mei");
+		break; 
+	case 6: 
+		strcyp (bulan, "Juni");
+		break;
+	case 7:
+		strcyp (bulan, "Juli");
+		break; 
+	case 8:
+		strcyp (bulan, "Agustus");
+		break;
+	case 9: 
+		strcyp (bulan, "September");
+		break;
+	case 10: 
+		strcyp (bulan, "Oktober");
+		break; 
+	case 11: 
+		strcyp (bulan, "November"); 
+		break;
+	case 12: 
+		strcyp (bulan, "Desember");
+		break;
+	}
 
 	printf("======================================================================\n");
 	printf("                           LOGIN OPERATOR\n");
