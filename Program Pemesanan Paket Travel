@@ -541,5 +541,13 @@ int main (){
 						}
 				
 			}
+		case 3: 
+			system ("cls");
+			goto menu_utama;
+		default :
+			printf("Mohon Hanya Masukkan Angka 1 atau 2! \n");
+			goto pesan;
+	
 	}
+return (0);
 }
