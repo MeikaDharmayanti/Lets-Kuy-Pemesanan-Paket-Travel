@@ -269,7 +269,7 @@ int main (){
 		printf("h. Bukit Telletubies\n\n");
 		printf("Fasilitas:\n");
 		printf("a. Private Tour Dengan Mobil\n");
-		printf("b. Penjemputan Ke Lokasi\n);
+		printf("b. Penjemputan Ke Lokasi\n");
 		printf("c. Guide Lokal Berpengalaman\n\n");
 		break:
 		
@@ -311,7 +311,7 @@ int main (){
 			printf("c. Guide Lokal Berpengalaman\n\n");
 			break;
 		default :
-			printf(""Mohon Hanya Masukkan Antara Angka 1-5!\n);
+			printf("Mohon Hanya Masukkan Antara Angka 1-5!\n");
 			goto pilihan:
 	}
 	pesan:
@@ -447,7 +447,7 @@ int main (){
 					printf("Lama Travel         : %s Hari\n", paket.lama);
 					printf("Harga Per Orang	    : %d\n", paket.harga);
 					printf("Fasilitas Tambahan  :\n");
-					for(fasilitas.i=0fasilitas.i<pilih_fasilitas;fasilitas.i++){
+					for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
 						printf(" %d.%d\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
 					}
 					printf("Nama Pemesan         : %s\n", pesanan.nama);
