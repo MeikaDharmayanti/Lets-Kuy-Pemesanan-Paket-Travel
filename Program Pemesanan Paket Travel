@@ -13,8 +13,20 @@ int main (){
 	int hari_sekarang = Sys_T->tm_wday ;      
 	char hari [6];
 	char bulan [9];
-	char nama [50];
-	int jumlah_orang;
+	
+	struct travel {
+		char nama [50];
+		char lama [50];
+		int harga;
+		int total_travel;
+		int kirim;
+		int total;
+		int kembalian;
+		int bayar;
+		int bulan_pesan [9];
+	};
+	struct travel paket; 
+	
 	int tanggal_pemesanan;
 	int bulan_pemesanan;
 	int tahun_pemesanan;
@@ -30,64 +42,64 @@ int main (){
 	
 	switch (hari_sekarang) {
 	case 0: 
-		strcyp (hari, "Minggu");
+		strcpy (hari, "Minggu");
 		break;
 	case 1:
-		strcyp (hari, "Senin"); 
+		strcpy (hari, "Senin"); 
 		break;
 	case 2:
-		strcyp (hari, "Selasa");
+		strcpy (hari, "Selasa");
 		break;
 	case 3:
-		strcyp (hari, "Rabu");
+		strcpy (hari, "Rabu");
 		break;
 	case 4: 
 		strcyp (hari, "Kamis");
 		break;
 	case 5: 
-		strcyp (hari, "Jumat");
+		strcpy (hari, "Jumat");
 		break;
 	case 6:
-		strcyp (hari, "Sabtu");
+		strcpy (hari, "Sabtu");
 		break;
 	}
 	
-	switch (bulan_sekaarang) {
+	switch (bulan_sekarang) {
 	case 1: 
-		strcyp (bulan, "Januari");
+		strcpy (bulan, "Januari");
 		break; 
 	case 2: 
-		strcyp (bulan, "Februari"); 
+		strcpy (bulan, "Februari"); 
 		break; 
 	case 3:
-		strcyp (bulan, "Maret");
+		strcpy (bulan, "Maret");
 		break;
 	case 4: 
-		strcyp (bulan, "April"); 
+		strcpy (bulan, "April"); 
 		break; 
 	case 5: 
-		strcyp (bulan, "Mei");
+		strcpy (bulan, "Mei");
 		break; 
 	case 6: 
-		strcyp (bulan, "Juni");
+		strcpy (bulan, "Juni");
 		break;
 	case 7:
-		strcyp (bulan, "Juli");
+		strcpy (bulan, "Juli");
 		break; 
 	case 8:
-		strcyp (bulan, "Agustus");
+		strcpy (bulan, "Agustus");
 		break;
 	case 9: 
-		strcyp (bulan, "September");
+		strcpy (bulan, "September");
 		break;
 	case 10: 
-		strcyp (bulan, "Oktober");
+		strcpy (bulan, "Oktober");
 		break; 
 	case 11: 
-		strcyp (bulan, "November"); 
+		strcpy (bulan, "November"); 
 		break;
 	case 12: 
-		strcyp (bulan, "Desember");
+		strcpy (bulan, "Desember");
 		break;
 	}
 
@@ -155,4 +167,49 @@ int main (){
 			printf("Mohon Hanya Masukkan Antara Angka 1 atau 2!\n");
 			goto menu;
 	}
+	
+	menu_utama:
+	system("cls");
+	printf("======================================================================\n");
+	printf("                           LETS'S KUY TRAVEL\n");
+	printf("======================================================================\n\n");
+	printf("-------------------------------------------------------------------------\n");
+	printf("| Kode Paket |              Nama Paket              |     Harga	        |\n");
+	printf("-------------------------------------------------------------------------\n");
+	printf("|     1      |	    Paket Barat Nusa Penida         |Rp 350.000/orang   |\n");
+	printf("|     2      |      Paket Timur Nusa Penida         |Rp 350.000/orang   |\n");
+	printf("|     3      |   Paket Barat dan Timur Nusa Penida  |Rp 625.000/orang   |\n");
+	printf("|     4      |           Paket Snorkling            |Rp 400.000/orang   |\n");
+	printf("|     5      |	  Paket Tirta Yatra Nusa Penida     |Rp 450.000/orang   |\n");
+	printf("-------------------------------------------------------------------------\n");	
+	
+	pilihan:
+	printf ("Pilihan Pkaet Yang Diinginkan (1-5)??\n");
+	scanf ("%d", &pemesanan.pilihin);
+	fflush(stdin);
+	system("cls");
+	
+	switch (pesanan.pilihan) {
+		case 1: 
+		strcpy (paket.nama, "Paket Barat Nusa Penida");
+		strcpy (paket.lama, "Satu");
+		paket.harga=350000;
+		printf("====================================================================\n");
+		printf("                     Paket Barat Nusa Penida\n");
+		printf("====================================================================\n");
+		printf("Lama Travel: %s Hari\n\n", paket.lama);
+		printf("Objek Wisata:\n");
+		printf("a. Keliling Beach\n");
+		printf("b. Broken Beach\n");
+		printf("c. Angel's Billabong\n");
+		printf("d. Cristal Bay\n\n");
+		printf("Fasilitas:\n");
+		printf("a. Private Tour Dengan Mobil\n");
+		printf("b. Panjemput Ke Lokasi\n");
+		printf("c. Guide Lokal Berpengalaman");
+		break;
+		
+		
+	}
+	
 }
