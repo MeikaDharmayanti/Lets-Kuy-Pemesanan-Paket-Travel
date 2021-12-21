@@ -376,5 +376,107 @@ int main (){
 				getch();
 				goto bulan;
 			}
+			switch (pesanan.bulan_pemesan) {
+				case 1: 
+					strcpy (paket.bulan_pesan, "Januari");
+					break;
+				case 2:
+					strcpy (paket.bulan_pesan, "Februari");
+					break;
+				case 3:
+					strcpy (paket.bulan_pesan, "Maret");
+					break;
+				case 4:
+					strcpy (paket.bulan_pesan, "April");
+					break;
+				case 5: 
+					strcpy (paket.bulan_pesan, "Mei");
+					break;
+				case 6: 
+					strcpy (paket.bulan_pesam, "Juni");
+					break;
+				case 7: 
+					strcpy (paket.bulan_pesan, "Juli");
+					break;
+				case 8: 
+					strcpy (paket.bulan_pesan, "Agustus");
+					break;
+				case 9:
+					strcpy (paket.bulan_pesan, "September");
+					break;
+				case 10: 
+					strcpy (paket.bulan_pesan, "Oktober");
+					break;
+				case 11: 
+					 strcpy (paket.bulan_pesan, "November");
+					 break;
+				case 12: 
+					strcpy (paket.bulan_pesan, "Desember");
+				}
+			printf("\n\n--------------------------------------------\n");
+			kirim :
+			printf("Tekan 1 untuk kirim data\n");
+			printf("Tekan 2 untuk ulangi masukkan data\n");
+			printf("Tekan 3 untuk kembali ke menu uatama\n");
+			scanf("%d", &paket.kirim);
+			fflush(stdin);
+			
+			switch (paket.kirim){
+				case 1: 
+					nota :
+					system("cls");
+					printf("------------------------NOTA PEMESANAN-----------------------\n");
+					printf("Tanggal             : %s, %d %s %d\n", hari, tanggal_sekarang, bulan, tahun_sekarang);
+					printf("Waktu               : %s.%d\n", Sys_T -> tm_hour, Sys_T -> tm_min);
+					printf("Nama Paket          : %s\n", paket);
+					printf("Lama Travel         : %s Hari\n", paket.lama);
+					printf("Harga Per Orang	    : %d\n", paket.harga);
+					printf("Fasilitas Tambahan  :\n");
+					for(fasilitas.i=0fasilitas.i<pilih_fasilitas;fasilitas.i++){
+						printf(" %d.%d\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
+					}
+					printf("Nama Pemesan         : %s\n", pesanan.nama);
+					printf("Jumlah Orang         : %d\n", pesanan.jumlah_orang);
+					printf("Tanggal Kedatangan   : %d %s %d \n", pesanan.tanggal_pemesanan, paket.bulan_pesan, pesanan.tahun_pemesanan);
+					printf("Total Harga Travel   : %d\n", paket.total_travel);
+					printf("Total Harga Fasilitas: %d\n, harga_semua_fasilitas ");
+					printf("Total Harga          : %d\n\n, paket.total");
+					
+					bayar:
+					printf("Bayar		     :");
+					scanf("%d", paket.bayar);
+					fflush(stdin);
+					if(paket.bayar<paket.total){
+						printf("Jumlah Pembayaran Tidak Sesuai!!\n");
+					goto bayar;
+					}
+					else {
+						pakwt.kembalian=paket.bayara-paket.total;
+						printf("Kembalian 	:%d", paket.kembalian);
+					}
+					break;
+				case 2: 
+					goto pemesanan;
+				case 3:
+					goto menu_utama;
+				default:
+					printf("Mohon Hanya Masukkan Antara Angka 1 atau 2!\n");
+					goto kirim;
+				}
+				break;
+			case 2:
+				system("cls");
+				printf("---------------------------------------------------------------------\n");
+				printf("| Kode |                 Nama Fasilitas              |      Harga    | \n");
+				printf("---------------------------------------------------------------------\n");
+				printf("|  1   |    Tiket Boat Pelabuhan Sanur-Nusa Penida   | 75.000/orang  |\n");
+				printf("|  2   | Tiket Boat Pelabuhan Tri Buana-Nusa Penida  | 50.000/orang  |\n");
+				printf("|  3   |                Kamar Penginapan             | 200.000/kamar |\n");
+				printf("|  4   |         Paket 100 Canang + 5 Pejati         | 250.000/paket |\n");
+				printf("---------------------------------------------------------------------\n\n");
+				
+			
+				
+			}
 	}
 }
