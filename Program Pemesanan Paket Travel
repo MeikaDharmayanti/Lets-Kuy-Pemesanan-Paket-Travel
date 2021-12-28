@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <stdlib.h>
 
 int main (){
 	struct tm *Sys_T;
@@ -182,6 +183,7 @@ int main (){
 				else{
 					printf("Akses Ditolak!");
 					getch();
+					exit(0);
 				}
 			}
 			break;
@@ -328,7 +330,7 @@ int main (){
 			pemesanan:
 			system("cls");
 			printf("----------------------------------------------------------------\n");
-			printf("Nama Paket            : %s \n", paket);
+			printf("Nama Paket            : %s \n", paket.nama);
 			printf("Lama Travel           : %s Hari\n", paket.lama);
 			printf("Harga Per Orang       : %d\n", paket.harga);
 			printf("Fasilitas Tambahan    : \n");
@@ -444,12 +446,12 @@ int main (){
 					printf("------------------------NOTA PEMESANAN-----------------------\n");
 					printf("Tanggal             : %s, %d %s %d\n", hari, tanggal_sekarang, bulan, tahun_sekarang);
 					printf("Waktu               : %d.%d\n", Sys_T -> tm_hour, Sys_T -> tm_min);
-					printf("Nama Paket          : %s\n", paket);
+					printf("Nama Paket          : %s\n", paket.nama);
 					printf("Lama Travel         : %s Hari\n", paket.lama);
 					printf("Harga Per Orang	    : %d\n", paket.harga);
 					printf("Fasilitas Tambahan  :\n");
 					for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
-						printf(" %d.%s\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
+						printf("                         %d.%s\n", fasilitas.banyak_fasilitas[fasilitas.i], fasilitas.nama_fasilitas[fasilitas.i]);
 					}
 					printf("Nama Pemesan         : %s\n", pesanan.nama);
 					printf("Jumlah Orang         : %d\n", pesanan.jumlah_orang);
