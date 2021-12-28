@@ -137,7 +137,7 @@ int main (){
 	printf ("| 2  |         Login         |\n");
 	printf("+----------------------------+\n");
 	
-	printf (" Piih Menu Yang Diinginkan (1-2): "); 
+	printf (" Pilih Menu Yang Diinginkan (1-2): "); 
 	scanf("%d", &registrasi.menu);
 	switch(registrasi.menu){
 		case 1 :
