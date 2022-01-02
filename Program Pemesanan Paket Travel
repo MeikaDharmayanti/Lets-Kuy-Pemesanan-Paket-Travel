@@ -297,7 +297,7 @@ fclose(buka);
 			scanf("%d", &pesanan.bulan_pemesanan);
 			fflush(stdin);
 			
-			if (pesanan.bulan_pemesanan>12){
+			if (0>pesanan.bulan_pemesanan>12){
 				printf("Masukkan Bulan Yang Sesuai\n");
 				goto bulan;
 			}
@@ -308,44 +308,28 @@ fclose(buka);
 			
 			if (pesanan.bulan_pemesanan==1 || pesanan.bulan_pemesanan==3 || pesanan.bulan_pemesanan==5 || pesanan.bulan_pemesanan==7 || 
 			pesanan.bulan_pemesanan==8 ||pesanan.bulan_pemesanan==10 || pesanan.bulan_pemesanan==12){
-				if (pesanan.tanggal_pemesanan >31){
+				if (0>pesanan.tanggal_pemesanan >31){
 				printf("Masukkan Tanggal Yang Sesuai\n");
 				goto tanggal;
 				}
 			}
 			else if (pesanan.bulan_pemesanan==4 || pesanan.bulan_pemesanan==6 || pesanan.bulan_pemesanan==9 || pesanan.bulan_pemesanan==11){
-				if (pesanan.tanggal_pemesanan>30){
+				if (0>pesanan.tanggal_pemesanan>30){
 				printf("Masukkan Tanggal Yang Sesuai\n");
 				goto tanggal;
 				}
 			}
 			else if (pesanan.bulan_pemesanan==2){
-				if (pesanan.tanggal_pemesanan>29){
+				if (0>pesanan.tanggal_pemesanan>29){
 				printf("Masukkan Tanggal Yang Sesuai\n");
 				goto tanggal;
 				}
 			}
 			tahun:
-			printf("Tahun Kedatangan      : ");
-			scanf("%d", &pesanan.tahun_pemesanan);
-			if (pesanan.tahun_pemesanan%400 == 0) {
-			printf("%d Merupakan Tahun Kabisat \n", pesanan.tahun_pemesanan);
-			} 
-			else if (pesanan.tahun_pemesanan%100 == 0 ) {
-			printf ("%d BUKAN MERUPAKAN TAHUN KABISAT MASUKKAN TANGGAL YANG SESUAI!!!\n", pesanan.tahun_pemesanan); 
-			}
-			else if (pesanan.tahun_pemesanan%4 == 0) {
-			printf ("%d Merupakan Tahun Kabisat \n", pesanan.tahun_pemesanan);
-			}
-			else {
-			printf ("%d BUKAN MERUPAKAN TAHUN KABISAT MASUKKAN TANGGAL YANG SESUAI!!!\n", pesanan.tahun_pemesanan);
-			goto tahun;
-			}
-			fflush(stdin);
-			
 			if (pesanan.tahun_pemesanan<tahun_sekarang||
 			(pesanan.bulan_pemesanan<bulan_sekarang && pesanan.tahun_pemesanan<= tahun_sekarang)||
-			(pesanan.tanggal_pemesanan<tanggal_sekarang && pesanan.bulan_pemesanan<=bulan_sekarang && pesanan.tahun_pemesanan<=tahun_sekarang)){
+			(pesanan.tanggal_pemesanan<tanggal_sekarang && pesanan.bulan_pemesanan<=bulan_sekarang && pesanan.tahun_pemesanan<=tahun_sekarang)||
+			(pesanan.tanggal_pemesanan==29 && pesanan.bulan_pemesanan==2 && pesanan.tahun_pemesanan%4!=0)){
 				printf("Mohon Inputkan Tanggal Kedatangan Yang Sesuai\n");
 				getch();
 				goto bulan;
