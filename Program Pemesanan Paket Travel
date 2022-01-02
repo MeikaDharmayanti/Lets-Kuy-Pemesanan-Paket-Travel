@@ -61,6 +61,22 @@ int main (){
 	int pilih_fasilitas=0;
 	int harga_semua_fasilitas=0;
 	
+	int i,j, destin;
+	int index;
+	char destinasi [10] [25];
+	
+	
+	
+struct file {
+    int id;
+    char nama[50];
+    int harga;
+    char lama [10];
+    int objek;
+    char wisata[10] [25];
+};
+struct file trave[200], fasi[100];
+	
 	
 	switch (hari_sekarang) {
 	case 0: 
@@ -197,126 +213,52 @@ int main (){
 	printf("======================================================================\n");
 	printf("                           LETS'S KUY TRAVEL\n");
 	printf("======================================================================\n\n");
-	printf("-------------------------------------------------------------------------\n");
-	printf("| Kode Paket |              Nama Paket              |     Harga	        |\n");
-	printf("-------------------------------------------------------------------------\n");
-	printf("|     1      |	    Paket Barat Nusa Penida         |Rp 350.000/orang   |\n");
-	printf("|     2      |      Paket Timur Nusa Penida         |Rp 350.000/orang   |\n");
-	printf("|     3      |   Paket Barat dan Timur Nusa Penida  |Rp 625.000/orang   |\n");
-	printf("|     4      |           Paket Snorkling            |Rp 400.000/orang   |\n");
-	printf("|     5      |	  Paket Tirta Yatra Nusa Penida     |Rp 450.000/orang   |\n");
-	printf("-------------------------------------------------------------------------\n");	
+	
+	printf("---------------------------------------------------------------------------------------------------------\n");
+	printf("| Kode Paket |Total Destinasi |Lama(Hari)|                 Nama Paket                |      Harga       | \n");
+	printf("---------------------------------------------------------------------------------------------------------\n");
+	
+FILE *buka;
+int line;
+i=0; line=0;
+buka=fopen("paket2.txt","r");
+while(line!=EOF){
+        line=fscanf(buka,"%d %d %d",&trave[i].id, &trave[i].objek, &trave[i].harga);
+        fgets(trave[i].lama,10,buka);
+        fgets(trave[i].nama,43,buka);
+        for(j=0; j<trave[i].objek; j++){
+    	    fgets(trave[i].wisata[j],25,buka);
+  
+    	}
+        if (line != EOF) printf("|%12d|%16d|%9s |%37s |%18d|\n", trave[i].id, trave[i].objek, trave[i].lama, trave[i].nama, trave[i].harga);
+        i++;
+}
+printf("---------------------------------------------------------------------------------------------------------\n\n\n");
+fclose(buka);
+
+	printf("--------------------------------------------------\n");	
 	
 	pilihan:
-	printf ("Pilihan Paket Yang Diinginkan (1-5)??\n");
+	printf ("Pilihan Paket Yang Diinginkan (1-%d)??\n", i-1);
 	scanf ("%d", &pesanan.pilihan);
+	index=pesanan.pilihan-1;
 	fflush(stdin);
 	system("cls");
 	
-	switch (pesanan.pilihan) {
-		case 1: 
-		strcpy (paket.nama, "Paket Barat Nusa Penida");
-		strcpy (paket.lama, "Satu");
-		paket.harga=350000;
+	if (0<pesanan.pilihan<i){
+		strcpy (paket.nama, trave[index].nama);
+		strcpy (paket.lama, trave[index].lama);
+		paket.harga= trave[index].harga;
 		printf("====================================================================\n");
-		printf("                     Paket Barat Nusa Penida\n");
-		printf("====================================================================\n");
-		printf("Lama Travel: %s Hari\n\n", paket.lama);
-		printf("Objek Wisata:\n");
-		printf("a. Kelingking Beach\n");
-		printf("b. Broken Beach\n");
-		printf("c. Angel's Billabong\n");
-		printf("d. Cristal Bay\n\n");
-		printf("Fasilitas:\n");
-		printf("a. Private Tour Dengan Mobil\n");
-		printf("b. Panjemputan Ke Lokasi\n");
-		printf("c. Guide Lokal Berpengalaman");
-		break;
-		
-		case 2 : 
-			strcpy (paket.nama, "Paket Timur Nusa Penida");
-			strcpy (paket.lama, "Satu");
-			paket.harga=350000;
-			printf("====================================================================\n");
-			printf ("                     Paket Timur Nusa Penida\n");
-			printf("====================================================================\n");
-			printf("Lama Travel: %s Hari\n\n", paket.lama);
-			printf("Objek Wisata:\n");
-			printf("a. Diamond Beach\n");
-			printf("b. Atuh Beach\n");
-			printf("c. Pulau Seribu/Raja Lima\n");
-			printf("d. Bukit Telletubies\n\n");
-			printf("Fasilitas:\n");
-			printf("a. Private Tour Dengan Mobil\n");
-			printf("b. Penjemputan Ke Lokasi\n");
-			printf("c. Guide Lokal Berpengalaman\n\n");
-			break;
-			
-		case 3 : 
-		strcpy (paket.nama, "Paket Barat dan Timur Nusa Penida ");
-		strcpy (paket.lama, "Dua");
-		paket.harga=600000;
-		printf("====================================================================\n");
-		printf	("                     Paket Barat dan Timur Nusa Penida\n");
+		printf("                     %s\n", paket.nama);
 		printf("====================================================================\n");
 		printf("Lama Travel: %s Hari\n\n", paket.lama);
-		printf("Objek Wisata:\n");
-		printf("a. Keliling Beach\n");
-		printf("b. Broken Beach\n");
-		printf("c. Angel's Billabong\n");
-		printf("d. Cristal Bay\n");
-		printf("e. Diamond Beach\n");
-		printf("f. Atuh Beach\n");
-		printf("g. Pulau Seribu/Raja Lima\n");
-		printf("h. Bukit Telletubies\n\n");
-		printf("Fasilitas:\n");
-		printf("a. Private Tour Dengan Mobil\n");
-		printf("b. Penjemputan Ke Lokasi\n");
-		printf("c. Guide Lokal Berpengalaman\n\n");
-		break;
-		
-		case 4 : 
-			strcpy (paket.nama, "Paket Snorkling");
-			strcpy (paket.lama, "Setengah");
-			paket.harga=400000;
-			printf("====================================================================\n");
-			printf ("                     Paket Snorkling\n");
-			printf("====================================================================\n");
-			printf("Lama Travel: %s Hari\n\n", paket.lama);
-			printf("Spot Snorkling:\n");
-			printf("a. Wall Point\n");
-			printf("b. Jetty Point\n");
-			printf("c. Manta Point\n");
-			printf("d. Gamat Bay\n\n");
-			printf("Fasilitas:\n");
-			printf("a. Private Tour Dengan Mobil\n");
-			printf("b. Penjemputan Ke Lokasi\n");
-			printf("c. Guide Lokal Berpengalaman\n");
-			printf("d. Peralatan Snorkling\n\n");
-			break;
-			
-		case 5 :
-			strcpy (paket.nama, "Paket Tirta Yatra");
-			strcpy (paket.lama, "Satu");
-			paket.harga=450000;
-			printf("====================================================================\n");
-			printf ("                     Paket Tirta Yatra\n");
-			printf("====================================================================\n");
-			printf("Lama Travel: %s Hari\n\n", paket.lama);
-			printf("Pura Tujuan:\n");
-			printf("a. Pura Mobil\n");
-			printf("b. Pura Ped\n");
-			printf("c. Pura Puncak Mundi\n");
-			printf("d. Pura Giri Putri\n\n");
-			printf("Fasilitas :\n");
-			printf("a. Private Tour Dengan Mobil\n");
-			printf("b. Penjemputan Ke Lokasi\n");
-			printf("c. Guide Lokal Berpengalaman\n\n");
-			break;
-		default :
-			printf("Mohon Hanya Masukkan Antara Angka 1-5!\n");
-			goto pilihan;
+		printf("Destinasi Tujuan:\n");
+		for(j=0; j<trave[index].objek; j++){
+			printf("%d. %24s \n", j+1,trave[index].wisata[j]) ;
+		}
 	}
+	
 	pesan:
 	printf("\n\n----------------------------------------------------------------\n");
 	printf("Pilih 1 Untuk Pesan\n");
@@ -498,38 +440,37 @@ int main (){
 				break;
 			case 2:
 				system("cls");
-				printf("---------------------------------------------------------------------\n");
-				printf("| Kode |                 Nama Fasilitas              |      Harga    | \n");
-				printf("---------------------------------------------------------------------\n");
-				printf("|  1   |    Tiket Boat Pelabuhan Sanur-Nusa Penida   | 75.000/orang  |\n");
-				printf("|  2   | Tiket Boat Pelabuhan Tri Buana-Nusa Penida  | 50.000/orang  |\n");
-				printf("|  3   |                Kamar Penginapan             | 200.000/kamar |\n");
-				printf("|  4   |         Paket 100 Canang + 5 Pejati         | 250.000/paket |\n");
+				printf("----------------------------------------------------------------------\n");
+				printf("| Kode |                 Nama Fasilitas               |      Harga   | \n");
+				printf("----------------------------------------------------------------------\n");
+					
+				FILE *buka;
+				int line;
+				i=0; line=0;
+				buka=fopen("fasilitas.txt","r");
+				while(line!=EOF){
+		        line=fscanf(buka,"%d %d",&fasi[i].id,&fasi[i].harga);
+        		fgets(fasi[i].nama,45,buka);
+        		if (line != EOF) printf("|%6d| %s |%14d|\n", fasi[i].id, fasi[i].nama, fasi[i].harga);
+       			i++;
+				}
+				printf("---------------------------------------------------------------------\n\n\n");
+				fclose(buka);
+
 				printf("---------------------------------------------------------------------\n\n");
 				
 				fasilitas:
-				printf("Pilih Fasilitas Yang Diinginkan (1-4) : ");
+				printf("Pilih Fasilitas Yang Diinginkan (1-%d) : ", i-1);
 				scanf("%d", &fasilitas);
 				fflush(stdin);
-				if (0<fasilitas.fasilitas<5){
-					switch (fasilitas.fasilitas) {
-						case 1 :
-							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Tiket Boat Pelabuhan Sanur-Nusa Penida");
-							fasilitas.harga_fasilitas[pilih_fasilitas]=75000;
-							break;
-						case 2 :
-							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Tiket Boat Pelabuhan Tri Buana-Nusa Penida");
-							fasilitas.harga_fasilitas[pilih_fasilitas]=50000;
-							break;
-						case 3 :
-							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Kamar Penginapan  ");
-							fasilitas.harga_fasilitas[pilih_fasilitas]=200000;
-							break;
-						case 4 :
-							strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], "Paket 100 Canang + 5 Pejati ");
-							fasilitas.harga_fasilitas[pilih_fasilitas]=250000;
-							break;
+				if (0<fasilitas.fasilitas<i){
+						strcpy (fasilitas.nama_fasilitas[pilih_fasilitas], fasi[fasilitas.fasilitas-1].nama);
+						fasilitas.harga_fasilitas[pilih_fasilitas]=fasi[fasilitas.fasilitas-1].harga;
 					}
+				else{
+					printf("Fasilitas Tidak Tersedia, Mohon Masukkan Angka yang Sesuai!\n");
+					goto fasilitas;
+				}
 					printf("Banyak : ");
 					scanf("%d", &fasilitas.banyak_fasilitas[pilih_fasilitas]);
 					fflush(stdin);		
@@ -557,7 +498,6 @@ int main (){
 						goto tambah_fasilitas;
 						}
 				
-			}
 		case 3: 
 			system ("cls");
 			goto menu_utama;
