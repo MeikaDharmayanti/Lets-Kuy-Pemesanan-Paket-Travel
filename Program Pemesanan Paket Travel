@@ -325,7 +325,11 @@ fclose(buka);
 				goto tanggal;
 				}
 			}
-			tahun:
+			
+			printf("Tahun Kedatangan      : ");
+			scanf("%d", &pesanan.tahun_pemesanan);
+			fflush(stdin);
+			
 			if (pesanan.tahun_pemesanan<tahun_sekarang||
 			(pesanan.bulan_pemesanan<bulan_sekarang && pesanan.tahun_pemesanan<= tahun_sekarang)||
 			(pesanan.tanggal_pemesanan<tanggal_sekarang && pesanan.bulan_pemesanan<=bulan_sekarang && pesanan.tahun_pemesanan<=tahun_sekarang)||
