@@ -383,8 +383,22 @@ int main (){
 				goto tanggal;
 				}
 			}
+			tahun:
 			printf("Tahun Kedatangan      : ");
 			scanf("%d", &pesanan.tahun_pemesanan);
+			if (pesanan.tahun_pemesanan%400 == 0) {
+			printf("%d Merupakan Tahun Kabisat \n", pesanan.tahun_pemesanan);
+			} 
+			else if (pesanan.tahun_pemesanan%100 == 0 ) {
+			printf ("%d BUKAN MERUPAKAN TAHUN KABISAT MASUKKAN TANGGAL YANG SESUAI!!!\n", pesanan.tahun_pemesanan); 
+			}
+			else if (pesanan.tahun_pemesanan%4 == 0) {
+			printf ("%d Merupakan Tahun Kabisat \n", pesanan.tahun_pemesanan);
+			}
+			else {
+			printf ("%d BUKAN MERUPAKAN TAHUN KABISAT MASUKKAN TANGGAL YANG SESUAI!!!\n", pesanan.tahun_pemesanan);
+			goto tahun;
+			}
 			fflush(stdin);
 			
 			if (pesanan.tahun_pemesanan<tahun_sekarang||
