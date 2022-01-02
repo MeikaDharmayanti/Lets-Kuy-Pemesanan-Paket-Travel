@@ -1,0 +1,5 @@
+
+1 75000 Tiket Boat Pelabuhan Sanur-Nusa Penida                   
+2 50000 Tiket Boat Pelabuhan Tri Buana-Nusa Penida           
+3 200000 Kamar Penginapan                                                                                    
+4 250000 Paket 100 Canang + 5 Pejati                                                                                                                        
