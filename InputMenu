@@ -14,7 +14,7 @@ int main (void){
     int harga;
     int pilih;
     int objek;
-    char lama [10];
+    int lama;
     char wisata[10] [25];
 };
 struct menu paket, fasilitas;
@@ -40,8 +40,8 @@ struct menu paket, fasilitas;
 			fflush(stdin);
 			
 			printf("Masukan Lama Travel     : ");
+			scanf("%d", &paket.lama);
 			fflush(stdin);
-			gets(paket.lama);
 			
 			
 			for(j=0; j<paket.objek; j++){
@@ -66,10 +66,10 @@ struct menu paket, fasilitas;
                 fprintf(tulis,"\n%d ",paket.pilih+1);
                 fprintf(tulis,"%d ",paket.objek);
                 fprintf(tulis,"%d ",paket.harga);
-                fprintf(tulis,"%8s ",paket.lama);
-                fprintf(tulis,"%37s ",paket.nama);
+                fprintf(tulis,"%d ",paket.lama);
+                fprintf(tulis,"%-39s ",paket.nama);
                 for(j=0; j<paket.objek; j++){
-					fprintf(tulis,"%24s ",paket.wisata[j]);
+					fprintf(tulis,"%-23s ",paket.wisata[j]);
 				}
 
                 printf("\nBERHASIL MENGINPUTKAN MENU");
