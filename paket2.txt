@@ -1,6 +1,6 @@
 
-1 4 350000     Satu               Paket Barat Nusa Penida         Kelingking Beach             Broken Beach        Angel's Billabong              Cristal Bay 
-2 4 350000     Satu               Paket Timur Nusa Penida            Diamond Beach               Atuh Beach             Pulau Seribu        Bukit Telletubies 
-3 8 625000      Dua     Paket Barat dan Timur Nusa Penida           Keliling Beach             Broken Beach        Angel's Billabong              Cristal Bay           Diamond Beach       Bukit Telletubies              Atuh Beach            Pulau Seribu 
-4 4 400000 Setengah                       Paket Snorkling               Wall Point              Jetty Point              Manta Point                Gamat Bay 
-5 4 450000     Satu         Paket Tirta Yatra Nusa Penida               Pura Mobil                 Pura Ped        Pura Puncak Mundi          Pura Giri Putri 
+1 4 350000 1 Paket Barat Nusa Penida                Kelingking Beach        Broken Beach            Angel's Billabong       Cristal Bay              
+2 4 350000 1 Paket Timur Nusa Penida                Diamond Beach           Atuh Beach              Pulau Seribu            Bukit Telletubies        
+3 8 625000 2 Paket Barat dan Timur Nusa Penida      Keliling Beach          Broken Beach            Angel's Billabong       Cristal Bay             Diamond Beach           Bukit Telletubies       Atuh Beach              Pulau Seribu            
+4 4 400000 1 Paket Snorkling                        Wall Point              Jetty Point             Manta Point             Gamat Bay                
+5 4 450000 1 Paket Tirta Yatra Nusa Penida          Pura Mobil              Pura Ped                Pura Puncak Mundi       Pura Giri Putri          
