@@ -17,7 +17,7 @@ int main (){
 	
 	struct travel {
 		char nama [50];
-		char lama [50];
+		int lama;
 		int harga;
 		int total_travel;
 		int kirim;
@@ -71,7 +71,7 @@ struct file {
     int id;
     char nama[50];
     int harga;
-    char lama [10];
+    int lama;
     int objek;
     char wisata[10] [25];
 };
@@ -214,26 +214,25 @@ struct file trave[200], fasi[100];
 	printf("                           LETS'S KUY TRAVEL\n");
 	printf("======================================================================\n\n");
 	
-	printf("---------------------------------------------------------------------------------------------------------\n");
-	printf("| Kode Paket |Total Destinasi |Lama(Hari)|                 Nama Paket                |      Harga       | \n");
-	printf("---------------------------------------------------------------------------------------------------------\n");
+	printf("--------------------------------------------------------------------------------------------------------\n");
+	printf("| Kode Paket |Total Destinasi |Lama(Hari) |                Nama Paket               |      Harga       | \n");
+	printf("--------------------------------------------------------------------------------------------------------\n");
 	
 FILE *buka;
 int line;
 i=0; line=0;
 buka=fopen("paket2.txt","r");
 while(line!=EOF){
-        line=fscanf(buka,"%d %d %d",&trave[i].id, &trave[i].objek, &trave[i].harga);
-        fgets(trave[i].lama,10,buka);
-        fgets(trave[i].nama,43,buka);
+        line=fscanf(buka,"%d %d %d %d",&trave[i].id, &trave[i].objek, &trave[i].harga, &trave[i].lama);
+        fgets(trave[i].nama,41,buka);
         for(j=0; j<trave[i].objek; j++){
     	    fgets(trave[i].wisata[j],25,buka);
   
     	}
-        if (line != EOF) printf("|%12d|%16d|%9s |%37s |%18d|\n", trave[i].id, trave[i].objek, trave[i].lama, trave[i].nama, trave[i].harga);
+        if (line != EOF) printf("|%-12d|%-16d|%-10d |%-40s |%-18d|\n", trave[i].id, trave[i].objek, trave[i].lama, trave[i].nama, trave[i].harga);
         i++;
 }
-printf("---------------------------------------------------------------------------------------------------------\n\n\n");
+printf("--------------------------------------------------------------------------------------------------------\n\n\n");
 fclose(buka);
 
 	printf("--------------------------------------------------\n");	
@@ -247,15 +246,15 @@ fclose(buka);
 	
 	if (0<pesanan.pilihan<i){
 		strcpy (paket.nama, trave[index].nama);
-		strcpy (paket.lama, trave[index].lama);
+		paket.lama= trave[index].lama;
 		paket.harga= trave[index].harga;
 		printf("====================================================================\n");
-		printf("                     %s\n", paket.nama);
+		printf("                     %-37s\n", paket.nama);
 		printf("====================================================================\n");
-		printf("Lama Travel: %s Hari\n\n", paket.lama);
+		printf("Lama Travel: %d Hari\n\n", paket.lama);
 		printf("Destinasi Tujuan:\n");
 		for(j=0; j<trave[index].objek; j++){
-			printf("%d. %24s \n", j+1,trave[index].wisata[j]) ;
+			printf("%d. %-24s \n", j+1,trave[index].wisata[j]) ;
 		}
 	}
 	
@@ -273,7 +272,7 @@ fclose(buka);
 			system("cls");
 			printf("----------------------------------------------------------------\n");
 			printf("Nama Paket            : %s \n", paket.nama);
-			printf("Lama Travel           : %s Hari\n", paket.lama);
+			printf("Lama Travel           : %d Hari\n", paket.lama);
 			printf("Harga Per Orang       : %d\n", paket.harga);
 			printf("Fasilitas Tambahan    : \n");
 			for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
@@ -391,7 +390,7 @@ fclose(buka);
 					printf("Tanggal             : %s, %d %s %d\n", hari, tanggal_sekarang, bulan, tahun_sekarang);
 					printf("Waktu               : %d.%d\n", Sys_T -> tm_hour, Sys_T -> tm_min);
 					printf("Nama Paket          : %s\n", paket.nama);
-					printf("Lama Travel         : %s Hari\n", paket.lama);
+					printf("Lama Travel         : %d Hari\n", paket.lama);
 					printf("Harga Per Orang	    : %d\n", paket.harga);
 					printf("Fasilitas Tambahan  :\n");
 					for(fasilitas.i=0;fasilitas.i<pilih_fasilitas;fasilitas.i++){
@@ -439,10 +438,10 @@ fclose(buka);
 				while(line!=EOF){
 		        line=fscanf(buka,"%d %d",&fasi[i].id,&fasi[i].harga);
         		fgets(fasi[i].nama,45,buka);
-        		if (line != EOF) printf("|%6d| %s |%14d|\n", fasi[i].id, fasi[i].nama, fasi[i].harga);
+        		if (line != EOF) printf("|%-6d| %s |%-14d|\n", fasi[i].id, fasi[i].nama, fasi[i].harga);
        			i++;
 				}
-				printf("---------------------------------------------------------------------\n\n\n");
+				printf("----------------------------------------------------------------------\n\n\n");
 				fclose(buka);
 
 				printf("---------------------------------------------------------------------\n\n");
